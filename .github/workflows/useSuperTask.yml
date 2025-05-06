@@ -1,0 +1,28 @@
+name: Hi there
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: "who ?"
+        type: string
+        required: true
+        default: "you"
+jobs:
+  test-my-action:
+    name: "testing superCharged"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: test-the-action
+        id: action-checker
+        uses: ./superCharged
+        with:
+          who-to-greet: ${{ inputs.who-to-greet }}
+      - name: show-output
+        run: echo "The time was ${{ steps.action-checker.outputs.time }} when the action said hello"
+      
