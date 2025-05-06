@@ -1,0 +1,14 @@
+name: Demo 1
+on: [workflow_dispatch]
+
+jobs:
+  job1:
+    name: our first step
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: run script
+        run: echo "hi ⛵"
+      
+          
