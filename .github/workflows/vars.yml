@@ -12,6 +12,6 @@ jobs:
 
     environment: ${{ matrix.env }}
     steps:
-      - run: echo ${{vars.svcAcctName}} ; echo ${{ secrets.svcAcctPassword }}
+      - run: echo ${{vars.svcAccountName}} ; echo ${{ secrets.svcAccountPassword }}
        
         
