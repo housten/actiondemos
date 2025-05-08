@@ -1,0 +1,17 @@
+name: show env variables
+
+on: 
+  workflow_dispatch:
+jobs:
+  showmyvars:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env: [dev,qa]
+
+    environment: ${{ matrix.env }}
+    steps:
+      - run: echo ${{vars.svcAcctName}} ; echo ${{ secrets.svcAcctPassword }}
+       
+        
