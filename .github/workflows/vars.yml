@@ -2,6 +2,12 @@ name: show env variables
 
 on: 
   workflow_dispatch:
+    inputs:
+      environments:
+        type: environment
+        description: "which environment?"
+        required: true
+      
 jobs:
   showmyvars:
     runs-on: ubuntu-latest
